@@ -178,9 +178,10 @@ def loop():
     img, landmarks = detector.process(img, draw=True)
  
     if len(landmarks) > 0:
-        # 좌표가 오른쪽 왼쪽이 반대
-        x16 = landmarks[16]  # left hand
-        print(x16)
+        # x16 = landmarks[16]  # left hand
+        # print(x16)
+        x15 = landmarks[15]  # right hand
+        print(x15)
 
 
     # update image 
