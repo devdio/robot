@@ -13,6 +13,9 @@ from helloai import *
 wnd = Window('wnd')
 
 # Using Camera
+# 1. 640 x 480
+# 2. 960x720
+camera = Camera(size=(640, 480))
 camera = Camera()
 
 # Infinite Loop
@@ -48,7 +51,7 @@ from helloai import *
 wnd = Window('wnd')
 
 # Using Camera
-camera = Camera()
+camera = Camera(size=(640, 480))
 
 # Create and initialize Object 
 detector = HandsDetector()
@@ -83,7 +86,7 @@ from helloai import *
 wnd = Window('wnd')
 
 # Using Camera
-camera = Camera()
+camera = Camera(size=(640, 480))
 
 # Create and initialize Object 
 detector = HandsDetector()
@@ -122,7 +125,7 @@ kamibot = KamibotPi('COM3', 57600)
 wnd = Window('wnd')
 
 # Using Camera
-camera = Camera()
+camera = Camera(size=(640, 480))
 
 # Create and initialize Object 
 detector = HandsDetector()
@@ -167,7 +170,7 @@ if __name__ == '__main__':
 from helloai import *
 
 wnd = Window('wnd')
-camera = Camera()
+camera = Camera(size=(640, 480))
 
 detector = PoseDetector()
 
