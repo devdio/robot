@@ -16,7 +16,7 @@ wnd = Window('wnd')
 # 1. 640 x 480
 # 2. 960x720
 camera = Camera(size=(640, 480))
-camera = Camera()
+
 
 # Infinite Loop
 def loop():
