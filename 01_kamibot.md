@@ -128,16 +128,6 @@ kamibot.delay(1)
 kamibot.get_object_detect(False)
 ```
 
-    left=0, right=0
-    
-
-
-
-
-    (0, 0)
-
-
-
 ### 탑모터 제어
 
 
@@ -155,6 +145,3 @@ kamibot.delay(1)
 ### END
 
 
-```python
-
-```
