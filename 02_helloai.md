@@ -30,6 +30,10 @@ def loop():
     # Display images read from the camera 
     wnd.show(img)
 
+def end():
+    # 프로그램이 끝나기 직전에 호출되는 함수
+    print('***** END *****')
+
 # ---------------------------------------
 # For HelloAI
 # ---------------------------------------
