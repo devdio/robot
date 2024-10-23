@@ -122,3 +122,37 @@ def loop():
 if __name__ == '__main__':
     run()
 ```
+
+## 얼굴 검출
+- 0 : left eye, 1: right eye, 2: nose, 3: mouth, 4: left ear, 5: right ear
+
+```python
+from helloai import *
+
+wnd = Window('wnd')
+camera = Camera(flip=0, size=(640, 480))
+
+detector = FaceDetector()
+
+def loop():
+    img = camera.read()
+
+    # detect Face 
+    img, landmarks = detector.process(img, draw=True)
+    
+    if len(landmarks) > 0:
+        print('Landmarks : ', landmarks[0])
+        print('BoundBox : ', landmarks[0]['bound'])
+        print('KeyPoints : ', landmarks[0]['keypoints'])
+
+
+    # update image 
+    wnd.show(img)
+
+# ---------------------------------------
+# for HelloAI
+# ---------------------------------------
+if __name__ == '__main__':
+    run()
+
+```
