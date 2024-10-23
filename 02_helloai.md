@@ -18,7 +18,7 @@ wnd = Window('wnd')
 # Using Camera
 # 1. 640 x 480
 # 2. 960x720
-camera = Camera(size=(640, 480))
+camera = Camera(flip=1, size=(640, 480))
 
 
 # Infinite Loop
