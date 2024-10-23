@@ -124,6 +124,11 @@ if __name__ == '__main__':
 ```
 
 ## 얼굴 검출
+
+
+
+<img src="https://ai.google.dev/static/edge/mediapipe/images/solutions/examples/face_detector.png?hl=ko" />
+
 - 0 : left eye, 1: right eye, 2: nose, 3: mouth, 4: left ear, 5: right ear
 
 ```python
