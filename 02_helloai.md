@@ -162,11 +162,10 @@ if __name__ == '__main__':
 
 ```
 
-## 펴고있는 손가락 갯수 세기
+## 엄지와 검지 사이의 거리 측정하기
 
 ```python
 from helloai import *
-
 
 wnd = Window('wnd')
 
@@ -182,11 +181,13 @@ def loop():
     img = camera.read()
 
     # 손 인식하기 
-    img, _ = detector.process(img, draw=True)
-    finger = detector.fingers_up()
-    # 인식된 손의 정보 표시
-    print(finger)
+    img, landmarks = detector.process(img, draw=True)
+   
     
+    if len(landmarks) > 0:
+        length, img, _ = detector.distance(landmarks[4], landmarks[8], img, draw=True)
+        print(length)
+
     # 이미지 표시 
     wnd.show(img)
 
