@@ -306,3 +306,51 @@ def loop():
 if __name__ == "__main__":
     run()
 ```
+
+## csv파일로 저장
+
+```python
+from helloai import *
+import csv
+
+wnd = Window('wnd')
+
+# Using Camera
+camera = Camera(flip=1, size=(640, 480))
+
+# Create and initialize Object 
+hands = HandsDetector()
+
+# 측정값 보존
+values = []
+
+# Infinite Loop
+def loop():
+    # Get From Camera
+    img = camera.read()
+
+    # Recognize hand
+    img, landmarks = hands.process(img, draw=True)
+
+    # Display information about recognized hand
+    if len(landmarks) > 0:
+        values.append(flatten(landmarks))
+        print(len(values))
+
+    # 화면 표시
+    wnd.show(img)
+
+# q로 프로그램을 끝낼때, 호출되는 함수
+def end():
+    with open("values.csv", 'w') as file:
+        writer = csv.writer(file)
+        writer.writerow(values)
+
+
+# ---------------------------------------
+# For HelloAI
+# ---------------------------------------
+if __name__ == '__main__':
+    run()
+```
+
