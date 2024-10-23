@@ -53,10 +53,10 @@ from helloai import *
 wnd = Window('wnd')
 
 # Using Camera
-camera = Camera(size=(640, 480))
+camera = Camera(flip=1, size=(640, 480))
 
 # Create and initialize Object 
-detector = HandsDetector()
+hands = HandsDetector()
 
 # Infinite Loop
 def loop():
@@ -64,13 +64,17 @@ def loop():
     img = camera.read()
 
     # Recognize hand
-    img, landmarks = detector.process(img, draw=True)
+    img, landmarks = hands.process(img, draw=True)
 
     # Display information about recognized hand
     # print(landmarks)
     
     # Display images read from the camera 
     wnd.show(img)
+
+def end():
+    # 프로그램이 끝나기 직전에 호출되는 함수
+    pass
 
 # ---------------------------------------
 # For HelloAI
