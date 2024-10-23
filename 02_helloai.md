@@ -262,3 +262,47 @@ def loop():
 if __name__ == '__main__':
     run()
 ```
+
+## 카메라 영상을 이미지 파일로 저장
+
+카메라 영상을 키보드의 's'키를 누르면 이미지 파일로 저장하는 코드
+
+```python
+from helloai import *
+
+wnd = Window("wnd")
+
+# 이미지를 저장할 폴더 경로
+# 폴더는 미리 만들어 둬야한다.
+rock = "C:/Temp/rock"
+paper = "C:/Temp/paper"
+scissors = "C:/Temp/scissors"
+
+no = 0
+img = None
+
+# 카메라 객체
+camera = Camera()
+
+# a 키를 누르면 폴더에 이미지 저장 
+def key_pressed(key):
+    global img, no
+    # s 키를 누르면 이미지가 저장된다.
+    if key == "s" and img is not None:
+        img.save(f"{rock}\\image_{no}.png")
+        no = no + 1
+
+
+def loop():
+    global img
+
+    img = camera.read()
+    wnd.show(img)
+
+
+# ---------------------------------------
+# HelloAI를 사용하기 위한 실행 방법
+# ---------------------------------------
+if __name__ == "__main__":
+    run()
+```
