@@ -1,11 +1,14 @@
 # HelloAI
 
+프로그램을 종료할 경우
+1. 카메라 화면이 표시되고 있는 경우는 카메라화면을 한번 클릭한 후, 키보드 `Q` 또는 `q`를 입력하면 된다.
+2. 화면이 표시되지 않는 프로그램은 터미널에서 `Control + C` 를 입력한다.
+  
 ## 카메라 표시
 
 - 640 x 480
 - top left (0, 0)
 - bottom right : (640, 480)
-
 
 ```python
 from helloai import *
@@ -33,11 +36,6 @@ def loop():
 if __name__ == '__main__':
     run()
 ```
-
-    WARNING:tensorflow:From C:\work\miniconda3\envs\robot\lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
-    
-    <HelloAI.Window Object Title:wnd, Size:((640, 480)) ,at memory location: (0x17fdbc8cac0)>
-    __key__ esc
     
 
 ## 손 검출
